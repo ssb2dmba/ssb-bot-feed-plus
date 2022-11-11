@@ -1,0 +1,97 @@
+########################
+# Global Configuration #
+########################
+
+# Database configuration
+db:
+  # The directory that stores database
+  location: ./db
+  # Posted entries which are older than these DAYs will be deleted from DB
+  # Can be override in each feed's configuration
+  cleanup: 30
+
+# RSS fetcher configuration
+rss:
+  # User agent for requests
+  userAgent: Node/RssFeedEmitter (https://github.com/filipedeschamps/rss-feed-emitter)
+  # Whether to ignore the first load of items
+  skipFirstLoad: true
+  # Default feed refresh time in milliseconds
+  # Can be override in each feed's configuration
+  refresh: 30000
+
+# Proxy server to be used for fetching entries and images.
+# Can be override in each feed's configuration
+# proxy: socks5://127.0.0.1:8080
+
+# PatchWork configuration
+patchwork:
+  # The path of PatchWork executable file / command
+  # 
+  # For MacOS, just put the path to PatchWork.app. For example, /Applications/PatchWork.app.
+  # Also you need to set "doubleDash" below to true.
+  bin: /usr/bin/ssb-patchwork
+  # Whether to add double dash (--) between patchwork command and its options
+  doubleDash: true
+
+######################
+# SSB Server & Feeds #
+######################
+
+sbots:
+  # Name of the SSB instance. Can be any name but be unique.
+  ssb_rss:
+    # The data dir of the SSB instance
+    path: ~/.ssb_rss
+    # The port of the SSB instance. Must be unique.
+    port: 7000
+    # The websocket port of the SSB instance. Must be unique.
+    wsPort: 7001
+    # Whether to start own server. If you've started the server already
+    # (for example the server in PatchWork), set it to false.
+    startServer: true
+    # Feeds for this SSB instance. Feeds defined here will be posted to
+    # this SSB instance.
+    feeds:
+      # Feeds URL
+      - url: https://rsshub.app/engadget/us
+        # The SSB channel to post the feeds' entries to.
+        # Quotes are required. Use spaces to separate channels.
+        channels: "#engadget #rss"
+
+        # Template for posting to SSB. Available variables:
+        # - {title}: Entry title
+        # - {description}: Entry content
+        # - {link}: Web link to the RSS entry
+        # - {channels}: The channels that the post belongs to
+        postTemplate: |
+          # {title}
+
+          {description}
+
+          Link: [{link}]({link})
+
+          {channels}
+        # proxy can be specified here to override the global setting
+        # proxy: socks5://127.0.0.1:8080
+
+        # cleanup can be specified here to override the global setting
+        # cleanup: 30
+
+        # refresh can be specified here to override the global setting
+        # refresh: 6000
+
+      # Another feed
+      # - url: https://url_of_the_feed
+      #   channels: "#channel_for_the_feed"
+  # Another SSB instance
+  # ssb_rss2:
+  #   path: ~/.ssb_rss2
+  #   port: 7002
+  #   wsPort: 7003
+  #   startServer: true
+  #   feeds:
+  #     - url: https://url_of_the_feed2
+  #       channels: "#channel_for_the_feed2 #rss"
+  #     - url: https://url_of_the_feed3
+  #       channels: "#channel_for_the_feed3 #rss"

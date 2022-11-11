@@ -1,0 +1,81 @@
+{
+  "name": "@marine-master/ssb-bot-feed",
+  "version": "1.2.0",
+  "description": "Scuttlebutt bot that read RSS feeds and post updates automatically. Tons of new features compared to original ssb-bot-feed.",
+  "repository": "github:marine-master/ssb-bot-feed",
+  "main": "index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=12.18.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "bin": {
+    "ssb-bot-feed": "index.js"
+  },
+  "keywords": [
+    "ssb",
+    "scuttlebutt",
+    "bot",
+    "feed",
+    "rss"
+  ],
+  "author": "Marine Master",
+  "license": "MIT",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.2.0",
+    "@typescript-eslint/parser": "^4.2.0",
+    "electron-builder": "^22.8.1",
+    "eslint": "^7.10.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0"
+  },
+  "dependencies": {
+    "async": "^3.2.0",
+    "colors": "^1.4.0",
+    "debug": "^4.2.0",
+    "got": "^11.7.0",
+    "js-yaml": "^3.14.0",
+    "jsdom": "^16.4.0",
+    "lodash": "^4.17.20",
+    "make-error-cause": "^2.3.0",
+    "p-retry": "^4.2.0",
+    "pull-stream": "^3.6.14",
+    "rss-feed-emitter": "^3.2.2",
+    "secret-stack": "^6.3.1",
+    "socks-proxy-agent": "^5.0.0",
+    "sqlite": "^4.0.14",
+    "sqlite3": "^5.0.0",
+    "ssb-about": "github:ssbc/ssb-about#use-await-ready",
+    "ssb-backlinks": "^1.0.0",
+    "ssb-blobs": "^1.2.3",
+    "ssb-client": "^4.9.0",
+    "ssb-config": "^3.4.5",
+    "ssb-conn": "~0.18.3",
+    "ssb-db": "^19.4.0",
+    "ssb-dht-invite": "~1.11.0",
+    "ssb-ebt": "^5.6.7",
+    "ssb-friends": "^4.1.4",
+    "ssb-invite": "^2.1.6",
+    "ssb-keys": "^7.2.2",
+    "ssb-lan": "^0.2.0",
+    "ssb-logging": "^1.0.0",
+    "ssb-master": "^1.0.3",
+    "ssb-no-auth": "^1.0.0",
+    "ssb-patchwork": "marine-master/patchwork.git#3.18-patch",
+    "ssb-private": "^0.2.3",
+    "ssb-query": "^2.4.5",
+    "ssb-replicate": "^1.3.2",
+    "ssb-room": "^1.2.2",
+    "ssb-search": "^1.2.1",
+    "ssb-tags": "^0.2.0",
+    "ssb-unix-socket": "^1.0.0",
+    "ssb-validate": "^4.1.3",
+    "ssb-ws": "^6.2.3",
+    "stream-to-pull-stream": "^1.7.3",
+    "striptags": "^3.1.1",
+    "turndown": "^6.0.0",
+    "yargs": "^16.0.3"
+  }
+}
