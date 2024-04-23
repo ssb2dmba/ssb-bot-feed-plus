@@ -33,7 +33,7 @@ const createSSBServer = require('secret-stack')()
   .use(require('ssb-ws'))
   .use(require('ssb-tags'))
   .use(require('ssb-ebt'))
-  .use(require('ssb-patchwork/lib/plugins'));
+  //.use(require('ssb-patchwork/lib/plugins'));
 
 if (!process.connected) {
   printToConsole('Server can only be launched as a child process');
