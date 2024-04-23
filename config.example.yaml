@@ -15,7 +15,7 @@ rss:
   # User agent for requests
   userAgent: Node/RssFeedEmitter (https://github.com/filipedeschamps/rss-feed-emitter)
   # Whether to ignore the first load of items
-  skipFirstLoad: true
+  skipFirstLoad: false
   # Default feed refresh time in milliseconds
   # Can be override in each feed's configuration
   refresh: 30000
@@ -42,27 +42,32 @@ sbots:
   # Name of the SSB instance. Can be any name but be unique.
   ssb_rss:
     # The data dir of the SSB instance
+    # path: /home/eflorent/.ssb_rss
     path: ~/.ssb_rss
     # The port of the SSB instance. Must be unique.
     port: 7000
     # The websocket port of the SSB instance. Must be unique.
     wsPort: 7001
+    host: 127.0.0.1
     # Whether to start own server. If you've started the server already
     # (for example the server in PatchWork), set it to false.
     startServer: true
     # Feeds for this SSB instance. Feeds defined here will be posted to
     # this SSB instance.
+    invite: "82.67.15.16:8008:@mHmLXqkjJeU7NqGDSs7xFFzlCiQjHyeini+BCgIJg4s=.ed25519~nTjJYWqOvRXskkl6bPHx7IYacRo29jCI2cKLdMgULX4="
+    strip_images: true
     feeds:
       # Feeds URL
-      - url: https://rsshub.app/engadget/us
+      - url: https://www.reddit.com/r/worldnews/hot/.rss
         # The SSB channel to post the feeds' entries to.
         # Quotes are required. Use spaces to separate channels.
-        channels: "#engadget #rss"
+        channels: "#worldnews"
 
         # Template for posting to SSB. Available variables:
         # - {title}: Entry title
         # - {description}: Entry content
         # - {link}: Web link to the RSS entry
+        # - {externalLink}: First Web link not related to the RSS entry
         # - {channels}: The channels that the post belongs to
         postTemplate: |
           # {title}
@@ -79,7 +84,7 @@ sbots:
         # cleanup: 30
 
         # refresh can be specified here to override the global setting
-        # refresh: 6000
+        refresh: 6000
 
       # Another feed
       # - url: https://url_of_the_feed
