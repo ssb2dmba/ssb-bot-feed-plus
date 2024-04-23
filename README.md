@@ -24,7 +24,7 @@ This fork add update for invite and hub and spoke to an ssb-relay server.
 
 2. Install ssb-bot-feed:
     ```bash
-    git clone https://github.com/ssb2dmba/ssb-bot-feed-plus.gi
+    git clone git@github.com:ssb2dmba/ssb-bot-feed-plus.git
     ```
 
 ### Configuration
