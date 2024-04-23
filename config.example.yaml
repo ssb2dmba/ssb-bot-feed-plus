@@ -67,9 +67,16 @@ sbots:
         # - {title}: Entry title
         # - {description}: Entry content
         # - {link}: Web link to the RSS entry
+        # - {externalLink}: First Web link not related to the RSS entry
         # - {channels}: The channels that the post belongs to
         postTemplate: |
-          {externalLink}
+          # {title}
+
+          {description}
+
+          Link: [{link}]({link})
+
+          {channels}
         # proxy can be specified here to override the global setting
         # proxy: socks5://127.0.0.1:8080
 
