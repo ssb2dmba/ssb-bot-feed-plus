@@ -20,7 +20,6 @@ const createSSBServer = require('secret-stack')()
   .use(require('ssb-no-auth'))
   .use(require('ssb-replicate'))
   .use(require('ssb-unix-socket'))
-  .use(require('ssb-friends')) // not strictly required, but helps ssb-conn a lot
   .use(require('ssb-blobs'))
   .use(require('ssb-backlinks'))
   .use(require('ssb-about'))
@@ -32,8 +31,7 @@ const createSSBServer = require('secret-stack')()
   .use(require('ssb-search'))
   .use(require('ssb-ws'))
   .use(require('ssb-tags'))
-  .use(require('ssb-ebt'))
-  //.use(require('ssb-patchwork/lib/plugins'));
+
 
 if (!process.connected) {
   printToConsole('Server can only be launched as a child process');
